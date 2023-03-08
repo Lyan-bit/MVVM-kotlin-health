@@ -37,9 +37,13 @@ class ComputeBMIBean(c: Context) {
             errors.add("weight is not a Double")
         }
 
-        if (dheights > 0) { }
+        if (dheights > 0) { 
+        //ok
+        }
         else { errors.add("ComputeBMI: heights > 0") }
-        if (dweight > 0) { }
+        if (dweight > 0) {
+        //ok
+        }
         else { errors.add("ComputeBMI: weight > 0") }
         return errors.size > 0
     }
