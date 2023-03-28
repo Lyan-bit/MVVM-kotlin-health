@@ -6,19 +6,6 @@
     tools:context=".CalorieCountFragment">
 		    <TableRow>
 				 <TextView
-				             android:id="@+id/calorieCountGenderLabel"
-				             android:textStyle="bold"
-				             android:background="#EEFFBB"
-				             android:text="Gender:" />
-				 <Spinner
-				             android:id="@+id/calorieCountGenderSpinner"
-				             android:layout_width="fill_parent"
-				             android:layout_height="wrap_content"
-				             android:layout_span="4" />
-			</TableRow>
-
-		    <TableRow>
-				 <TextView
 				             android:id="@+id/calorieCountExerciseLabel"
 				             android:textStyle="bold"
 				             android:background="#EEFFBB"
