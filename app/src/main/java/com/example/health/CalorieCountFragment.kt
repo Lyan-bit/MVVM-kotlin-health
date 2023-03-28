@@ -22,9 +22,6 @@ class CalorieCountFragment : Fragment(), View.OnClickListener , AdapterView.OnIt
 	private lateinit var cancelCalorieCount: Button
 	private lateinit var calorieCountResult: TextView
 
-	private lateinit var genderSpinner: Spinner
-	private var genderListItems: Array<String> = arrayOf("male", "female")
-	private var genderData: String = ""
 	private lateinit var exerciseSpinner: Spinner
 	private var exerciseListItems: Array<String> = arrayOf("walking", "jogging", "running", "swimming", "weights")
 	private var exerciseData: String = ""
@@ -52,12 +49,7 @@ class CalorieCountFragment : Fragment(), View.OnClickListener , AdapterView.OnIt
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 		root = inflater.inflate(R.layout.caloriecount_layout, container, false)
         model = CalorieCountViewModel.getInstance(myContext)
-        
-		genderSpinner = root.findViewById(R.id.calorieCountGenderSpinner)
-		val genderAdapter = ArrayAdapter<String>(myContext, android.R.layout.simple_spinner_item,genderListItems)
-		genderAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-		genderSpinner.adapter = genderAdapter
-		genderSpinner.onItemSelectedListener = this
+
 		exerciseSpinner = root.findViewById(R.id.calorieCountExerciseSpinner)
 		val exerciseAdapter = ArrayAdapter<String>(myContext, android.R.layout.simple_spinner_item,exerciseListItems)
 		exerciseAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -104,7 +96,6 @@ class CalorieCountFragment : Fragment(), View.OnClickListener , AdapterView.OnIt
 	private fun calorieCountOK () {
     timesData = timesTextField.text.toString()
 
-				calorieCountBean.setGender(genderData)
 		calorieCountBean.setExercise(exerciseData)
 		calorieCountBean.setTimes(timesData)
 
@@ -126,9 +117,6 @@ class CalorieCountFragment : Fragment(), View.OnClickListener , AdapterView.OnIt
 	
 
     override fun onItemSelected(parent: AdapterView<*>, v: View?, position: Int, id: Long) {
-	 	if (parent === genderSpinner) {
-	 	    genderData = genderListItems[position]
-	 	}
 	 	if (parent === exerciseSpinner) {
 	 	    exerciseData = exerciseListItems[position]
 	 	}
