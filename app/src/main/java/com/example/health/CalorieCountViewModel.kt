@@ -13,7 +13,7 @@ class CalorieCountViewModel private constructor(context: Context) {
 
     fun calorieCount(gender: String, exercise: String, times: Double): Double {
 
-        val calories: Double
+        val calories: Double 
         var factor: Double
         if (exercise == "walking") {
             factor  = 100.0
