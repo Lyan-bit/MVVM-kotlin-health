@@ -44,7 +44,7 @@ class CalorieCountBean(c: Context) {
         } catch (e: Exception) {
             errors.add("times is not a Double")
         }
-        return errors.size > 0
+        return errors.isNotEmpty()
     }
 
     fun errors(): String {
