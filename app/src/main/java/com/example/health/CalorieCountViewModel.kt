@@ -15,7 +15,6 @@ class CalorieCountViewModel private constructor(context: Context) {
 
         val calories: Double
         var factor: Double
-        factor  = 1.0
         if (exercise == "walking") {
             factor  = 100.0
         } else {
