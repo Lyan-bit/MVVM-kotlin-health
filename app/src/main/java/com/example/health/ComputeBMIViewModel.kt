@@ -13,7 +13,7 @@ class ComputeBMIViewModel private constructor(context: Context) {
     }
 
     fun computeBMI (heights: Double, weight: Double): Double {
-        var result = 0.0
+        var result : Double
         result  = weight / (heights * heights)
         return result
     }
